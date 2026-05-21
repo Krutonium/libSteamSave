@@ -13,4 +13,4 @@ That said I would bet if you're using it reasonably (to store save files and may
 
 Oh and I'd probably upload files as encrypted archives, for safety.
 
-Limitations: 200MB upload size, game will be shown as "open" when doing file transfers.
+Limitations: 200MB upload size, game will be shown as "open" when doing file transfers. Steam MUST be open.

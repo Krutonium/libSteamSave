@@ -105,6 +105,27 @@ public class SteamSave
             Console.WriteLine($"Used: {FormatBytes(usedBytes)}");
         }
     }
+
+    /// <summary>
+    /// Deletes a remote file
+    /// </summary>
+    /// <param name="gameId">Game ID to access</param>
+    /// <param name="remoteFilename">The file to delete</param>
+    /// <returns>true on success, false on fail.</returns>
+    public bool DeleteFile(int gameId, string remoteFilename)
+    {
+        InitSteam(gameId);
+        // Check that the file exists remotely:
+        var list = FileListing(gameId);
+        if (FileListing(gameId).All(x => x.Item1 != remoteFilename))
+        {
+            Console.WriteLine("File not Found!");
+            return false;
+        }
+
+        SteamRemoteStorage.FileDelete(remoteFilename);
+        return true;
+    }
     
     /// <summary>
     /// Download a File from the given Game's ID
