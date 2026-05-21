@@ -252,9 +252,9 @@ public class SteamSave
         if (_steamInit)
         {
             SteamAPI.Shutdown();
-            File.Delete("appid.txt");
+            File.Delete("steam_appid.txt");
         }
-        File.WriteAllText("appid.txt", $"{gameId}");
+        File.WriteAllText("steam_appid.txt", $"{gameId}");
         _gameId = gameId;
         if (!SteamAPI.Init())
         {
